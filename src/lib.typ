@@ -69,10 +69,10 @@
 
   show heading.where(level: 1): header => {
     set text(size: 9pt, weight: "bold")
-    let number = context counter(heading).display()
     block(breakable: false)[
-      #number
-      #h(1em)
+      // No number in front of "References"
+      // thanks @laurmaedje https://github.com/typst/typst/discussions/1055#discussioncomment-5770540
+      #if header.numbering != none { counter(heading).display() }
       #header.body
       #v(0.5em)
     ]
@@ -91,8 +91,8 @@
   // Thanks @Julian-Wassmann https://github.com/typst/typst/discussions/2280#discussioncomment-7612699
   // Use (2.3) for the 3rd equation of the 2nd section
   let customEqNumbering(n, loc) = {
-    let level0HeadingNumber = counter(heading).at(loc).at(0)
-    let headingNumbering = numbering("1", level0HeadingNumber)
+    let level1HeadingNumber = counter(heading).at(loc).at(0)
+    let headingNumbering = numbering("1", level1HeadingNumber)
     let equationNumbering = numbering("1", n)
     [(#headingNumbering.#equationNumbering)]
   }
