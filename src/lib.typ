@@ -41,7 +41,7 @@
     #text(
       size: 11pt,
     )[
-      #if type(authors) == str {
+      #if type(authors) == str or type(authors) == content {
         authors
       } else if type(authors) == array {
         // from https://typst.app/docs/tutorial/making-a-template/

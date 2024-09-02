@@ -28,11 +28,23 @@ A Typst template for SIAM paper submissions
 
 These instructions will get you a copy of the project up and running on the typst web app. Perhaps a short code example on importing the package and a very simple teaser usage.
 
-```typ
-#import "@preview/my-package:0.1.0": *
+```bash
+typst init @preview/tasteful-siam
+```
 
-#show: my-show-rule.with()
-#my-func()
+```typ
+#import "@preview/tasteful-siam:0.1.0": conf
+
+#show: doc => conf(
+  title: [A Typst template for SIAM paper submissions],
+  authors: [Sébastien Mestrallet],
+  abstract: [See #link("https://github.com/sebmestrallet/typst-tasteful-siam")],
+  doc,
+)
+
+= First section
+
+#lorem(50)
 ```
 
 ### Installation
@@ -55,9 +67,15 @@ A more in-depth description of usage. Any template arguments? A complicated exam
 #let my-complicated-example = ...
 ```
 
-## Additional Documentation and Acknowledgments
+## Ressources
 
-* Project folder on server:
-* Confluence link:
-* Asana board:
-* etc...
+TeX sources of the official template:
+- The [SIAM two-column template](https://internationalmeshingroundtable.com/assets/files/imr33/templates.zip) referenced for the [SIAM International Meshing Roundtable Workshop 2025](https://internationalmeshingroundtable.com/imr33/call-for-papers/#formatting-requirements)
+- The [SIAM Macros](https://epubs.siam.org/journal-authors#macros) on the SIAM website
+- The [2019 SIAM style manual](https://epubs.siam.org/pb-assets/files/SIAM_STYLE_GUIDE_2019.pdf) on the SIAM website
+
+How to create and publish a Typst template package:
+- The motivation and recommended interface for templates in the [official tutorial](https://typst.app/docs/tutorial/making-a-template/)
+- The in-depth format requirements in the [typst/packages](https://github.com/typst/packages) README
+- Do as the [templates directly maintained by the Typst team](https://github.com/typst/templates)
+- Use the [typst-package-template](https://github.com/typst-community/typst-package-template) GitHub template from [@typst-community](https://github.com/typst-community)
