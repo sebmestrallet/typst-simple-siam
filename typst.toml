@@ -15,7 +15,6 @@ exclude = [
 	".github",
 	"docs",
 	"scripts",
-	"tests",
 	".typstignore",
 	"Justfile",
 ]
