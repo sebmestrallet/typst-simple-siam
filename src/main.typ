@@ -243,6 +243,33 @@ We show a blank figure in @fig:blank.
 
 == Robustness. <sec:robustness>
 
+We do not
+attempt to present an overview
+here, but rather attempt to focus on those results that
+are relevant to our particular algorithm; see @fig:blank.
+This section assumes prior knowledge of the role of graph theory
+in sparse Gaussian elimination; surveys of this role are
+available in~@bib:ROSE72 @bib:GEORGELIU. More general
+discussions of elimination trees are given in~@bib:LAW @bib:LIU @bib:LIU2 @bib:SCHREIBER.
+Thus, at the $k$th stage, the bordering algorithm consists of
+solving the lower triangular system
+
+$
+ L_(k-1)v = c
+$
+
+and setting
+
+// with Typst we cannot both
+// - have a different number for two successive equations
+// - align the equal sign of two successive equations https://typst.app/docs/reference/math/#alignment
+$
+ell &= D^(-1)_(k-1)v ,
+$
+$
+delta &= alpha - ell^t v .
+$
+
 = Algorithm <sec:algorithm>
 
 = Results <sec:results>
