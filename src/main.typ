@@ -94,6 +94,7 @@ a particular spanning tree for the graph of the filled-in matrix.
   to obtain a good smoothing factor.
 ] <thm:extend3d>
 
+#h(1.5em)
 Our purpose here is to examine the nonnumerical complexity of the
 sparse elimination algorithm given in~@BANKSMITH.
 As was shown there, a general sparse elimination scheme based on the
@@ -121,6 +122,7 @@ or that $A$ has been preordered to reflect an appropriate choice of $P$.
   grids; this artifice simplifies coding considerably.
 ]
 
+#h(1.5em)
 Our purpose here is to examine the nonnumerical complexity of the
 sparse elimination algorithm given in~@BANKSMITH.
 As was shown there, a general sparse elimination scheme based on the

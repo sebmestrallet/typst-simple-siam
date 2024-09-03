@@ -32,7 +32,7 @@
     )
   )
 
-  set par(justify: true)
+  set par(justify: true) // sadly, `par` does not have a `all-but-first-line-indent` parameter
 
   set text(
     font: "New Computer Modern",
