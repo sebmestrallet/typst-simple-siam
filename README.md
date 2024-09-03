@@ -67,6 +67,13 @@ A more in-depth description of usage. Any template arguments? A complicated exam
 #let my-complicated-example = ...
 ```
 
+## Files
+
+- [`src/lib.typ`](src/lib.typ): provide the `conf(title,authors,abstract,doc)` function to format a paper
+- [`src/main.typ`](src/main.typ): use `conf()` to reproduce the outputs of `ltexpprt_anonymous-submission.tex` & `ltexpprt_accepted-submission.tex` from the official template
+- [`src/bib.yml`](src/bib.yml): 	transcoding of `ltexpprt_references.bib` from the official template to the [Hayagriva](https://github.com/typst/hayagriva/blob/main/docs/file-format.md) format
+- [`src/siam.csl`](src/siam.csl): [Citation Style Language](https://citationstyles.org/) for the bibliography, based on the [IEEE](https://github.com/citation-style-language/styles/blob/master/ieee.csl) one (modified `<macro name="author">` to have small caps)
+
 ## Ressources
 
 TeX sources of the official template:

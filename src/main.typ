@@ -83,5 +83,4 @@ row/column indices than more traditional implementations of general
 sparse elimination.  This is accomplished by exploiting the m-tree,
 a particular spanning tree for the graph of the filled-in matrix.
 
-#bibliography("bib.yml", title: "References")
-// TODO small caps for authors
+#bibliography("bib.yml", title: "References", style: "siam.csl")
