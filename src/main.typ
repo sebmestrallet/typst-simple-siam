@@ -1,4 +1,4 @@
-#import "lib.typ": conf, theorem, thmrules, proof
+#import "lib.typ": conf, theorem, definition, thmrules, proof
 #show: thmrules // I don't know why, but if this line is in lib.typ, the thmboxes are center-aligned
 
 #let ANONYMOUS = false
@@ -68,7 +68,7 @@ the decomposition
 
 where $L$ is unit lower triangular and $D$ is diagonal.
 
-= Design Considerations.
+= Design Considerations. <sec:design>
 
 Several good ordering algorithms (nested dissection and
 minimum degree)
@@ -130,5 +130,18 @@ bordering algorithm requires less storage for pointers and
 row/column indices than more traditional implementations of general
 sparse elimination.  This is accomplished by exploiting the m-tree,
 a particular spanning tree for the graph of the filled-in matrix.
+
+#definition[
+  We describe the two methods in @sec:design. 
+In @sec:robustness we discuss some remaining details.
+]
+
+== Robustness. <sec:robustness>
+
+= Algorithm <sec:algorithm>
+
+= Results <sec:results>
+
+== Versatility. <sec:versatility>
 
 #bibliography("bib.yml", title: "References", style: "siam.csl")

@@ -9,6 +9,15 @@
   bodyfmt: body => [_ #body _],
 )
 
+#let definition = thmbox(
+  "definition",
+  "Definition",
+  supplement: "Def.",
+  inset: 0pt,
+  titlefmt: title => [#smallcaps(title)],
+  bodyfmt: body => [#body],
+)
+
 #let proof(body) = block[
   _Proof._ #body #h(2em) #sym.rect.v
 ]
