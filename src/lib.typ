@@ -138,6 +138,18 @@
     number-align: left
   )
 
+  // "Figure" as prefix for figure captions...
+  set figure(supplement: "Figure")
+  // ...but just "Fig." when referencing it
+  show ref: it => {
+    if it.element != none and it.element.supplement.text == "Figure" {
+      link(it.target)[Fig. #numbering(it.element.numbering, ..counter(figure).at(it.element.location()))]
+    }
+    else {
+      it
+    }
+  }
+
   columns(
     2,
     gutter: 10pt

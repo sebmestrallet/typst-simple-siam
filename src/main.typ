@@ -136,6 +136,7 @@ a particular spanning tree for the graph of the filled-in matrix.
 In @sec:robustness we discuss some remaining details.
 ]
 
+#h(1.5em)
 Our purpose here is to examine the nonnumerical complexity of the
 sparse elimination algorithm given in @bib:BANKSMITH.
 As was shown there, a general sparse elimination scheme based on the
@@ -149,6 +150,7 @@ Since our interest here does not
 focus directly on the ordering, we assume for convenience that $P=I$,
 or that $A$ has been preordered to reflect an appropriate choice of $P$.
 
+#h(1.5em)
 Our purpose here is to examine the nonnumerical complexity of the
 sparse elimination algorithm given in~@bib:BANKSMITH.
 As was shown there, a general sparse elimination scheme based on the
@@ -167,6 +169,77 @@ sparse elimination.
   where $G_x^(k-1)$ is obtained by deleting every other grid
   point of $G_x^k$ and similarly for $G_y^k$ and $G_z^k$.
 ]
+
+#h(1.5em)
+To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase~@bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE72 @bib:ROSE76 @bib:ROSEWHITTEN @bib:SCHREIBER.
+In @sec:robustness, we analyze the complexity of the old and new
+approaches to the intersection problem for the special case of
+an $n times n$ grid ordered by nested dissection. The special
+structure of this problem allows us to make exact estimates of
+the complexity. To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase~@bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE72 @bib:ROSE76 @bib:ROSEWHITTEN @bib:SCHREIBER.
+
+#h(1.5em)
+In @sec:design, we review the bordering algorithm, and introduce
+the sorting and intersection problems that arise in the
+sparse formulation of the algorithm.
+In @sec:robustness, we analyze the complexity of the old and new
+approaches to the intersection problem for the special case of
+an $n times n$ grid ordered by nested dissection. The special
+structure of this problem allows us to make exact estimates of
+the complexity. To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase~@bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE72 @bib:ROSE76 @bib:ROSEWHITTEN @bib:SCHREIBER.
+
+#h(1.5em)
+For the old approach, we show that the
+complexity of the intersection problem is $O(n^3)$, the same
+as the complexity of the numerical computations.  For the
+new approach, the complexity of the second part is reduced to
+$O(n^2 (log n)^2)$.
+
+#h(1.5em)
+To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase~@bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE72 @bib:ROSE76 @bib:ROSEWHITTEN @bib:SCHREIBER.
+In @sec:robustness, we analyze the complexity of the old and new
+approaches to the intersection problem for the special case of
+an $n times n$ grid ordered by nested dissection. The special
+structure of this problem allows us to make exact estimates of
+the complexity. To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase~@bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE72 @bib:ROSE76 @bib:ROSEWHITTEN @bib:SCHREIBER.
+This is accomplished by exploiting the m-tree,
+a particular spanning tree for the graph of the filled-in matrix.
+To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase~@bib:EISENSTAT @bib:GEORGELIU @bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE76 @bib:SCHREIBER.
+
+#place(
+  top,
+  float: true
+)[
+  #block(width: 100%)[
+    #figure(
+      v(14*12pt), // <=> 14pc, with 1pc=12pt
+      caption: [
+        This is a blank figure.
+      ]
+    ) <fig:blank>
+  ]
+]
+
+#h(1.5em)
+We show a blank figure in @fig:blank.
 
 == Robustness. <sec:robustness>
 
