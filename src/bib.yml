@@ -1,4 +1,4 @@
-BANKSMITH:
+bib:BANKSMITH:
   title: General Sparse Elimination Requires no Permanent Integer Storage
   author: ["Bank, R. E.", "Smith, R. K."]
   type: article
@@ -10,7 +10,7 @@ BANKSMITH:
         value: SIAM Journal on Scientific and Statistical Computing
         short: SIAM J. Sci. Stat. Comput.
 
-EISENSTAT:
+bib:EISENSTAT:
   title: Algorithms and Data Structures for Sparse Symmetric Gaussian Elimination
   author: [Eisenstat, S. C.", "Gursky, M. C.", "Schultz, M.", "Sherman, A."]
   type: article
@@ -23,14 +23,14 @@ EISENSTAT:
         short: SIAM J. Sci. Stat. Comput.
       volume: 2
 
-GEORGELIU:
+bib:GEORGELIU:
   title: Computer Solution of Large Sparse Positive Definite Systems
   author: ["George, A.", "Liu, J."]
   type: book
   date: 1981
   publisher: Prentice Hall
 
-LAW:
+bib:LAW:
   title: A Node Addition Model for Symbolic Factorization
   author: ["Law, K. H.", "Fenves, S. J."]
   type: article
@@ -43,7 +43,7 @@ LAW:
         short: ACM TOMS
       volume: 12
 
-LIU:
+bib:LIU:
   title: A Compact Row Storage Scheme for Cholesky Factors Using Elimination Trees
   author: Liu, J. W. H.
   type: article
@@ -56,7 +56,7 @@ LIU:
         short: ACM TOMS
       volume: 12
 
-LIU2:
+bib:LIU2:
   title: The Role of Elimination Trees in Sparse Factorization
   author: Liu, J. W. H.
   type: report
@@ -64,7 +64,7 @@ LIU2:
   serial-number: CS-87-12
   organization: Department of Computer Science, York University
 
-ROSE72:
+bib:ROSE72:
   title: A Graph Theoretic Study of the Numeric Solution of Sparse Positive Definite Systems
   author: Rose, D. J.
   type: article
@@ -74,7 +74,7 @@ ROSE72:
       publisher: Academic Press
       date: 1972
 
-ROSE76:
+bib:ROSE76:
   title: Algorithmic Aspects of Vertex Elimination on Graphs
   author: ["Rose, D. J.", "Tarjan, R. E.", "Lueker, G. S."]
   type: article
@@ -86,7 +86,7 @@ ROSE76:
         value: SIAM Journal on Computing
         short: SIAM J. Comput.
 
-ROSEWHITTEN:
+bib:ROSEWHITTEN:
   title: A Recursive Analysis of Disection Strategies
   author: ["Rose, D. J.", "Whitten, G. F."]
   type: article
@@ -97,7 +97,7 @@ ROSEWHITTEN:
       date: 1976
       editor: ["Bunch, James R.", "Rose, Donald J."]
 
-SCHREIBER:
+bib:SCHREIBER:
   title: A New Implementation of Sparse Gaussian Elimination
   author: Schrieber, R.
   type: article

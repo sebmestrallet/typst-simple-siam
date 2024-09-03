@@ -72,14 +72,14 @@ where $L$ is unit lower triangular and $D$ is diagonal.
 
 Several good ordering algorithms (nested dissection and
 minimum degree)
-are available for computing $P$~@GEORGELIU @ROSE72.
+are available for computing $P$~@bib:GEORGELIU @bib:ROSE72.
 Since our interest here does not
 focus directly on the ordering, we assume for convenience that $P=I$,
 or that $A$ has been preordered to reflect an appropriate choice of $P$.
 
 #h(1.5em)
 Our purpose here is to examine the nonnumerical complexity of the
-sparse elimination algorithm given in~@BANKSMITH.
+sparse elimination algorithm given in~@bib:BANKSMITH.
 As was shown there, a general sparse elimination scheme based on the
 bordering algorithm requires less storage for pointers and
 row/column indices than more traditional implementations of general
@@ -96,7 +96,7 @@ a particular spanning tree for the graph of the filled-in matrix.
 
 #h(1.5em)
 Our purpose here is to examine the nonnumerical complexity of the
-sparse elimination algorithm given in~@BANKSMITH.
+sparse elimination algorithm given in~@bib:BANKSMITH.
 As was shown there, a general sparse elimination scheme based on the
 bordering algorithm requires less storage for pointers and
 row/column indices than more traditional implementations of general
@@ -104,7 +104,7 @@ sparse elimination; see @thm:extend3d.
 This is accomplished by exploiting the m-tree,
 a particular spanning tree for the graph of the filled-in matrix.
 Several good ordering algorithms (nested dissection and minimum degree)
-are available for computing $P$~@GEORGELIU @ROSE72.
+are available for computing $P$~@bib:GEORGELIU @bib:ROSE72.
 Since our interest here does not
 focus directly on the ordering, we assume for convenience that $P=I$,
 or that $A$ has been preordered to reflect an appropriate choice of $P$.
@@ -124,7 +124,7 @@ or that $A$ has been preordered to reflect an appropriate choice of $P$.
 
 #h(1.5em)
 Our purpose here is to examine the nonnumerical complexity of the
-sparse elimination algorithm given in~@BANKSMITH.
+sparse elimination algorithm given in~@bib:BANKSMITH.
 As was shown there, a general sparse elimination scheme based on the
 bordering algorithm requires less storage for pointers and
 row/column indices than more traditional implementations of general
