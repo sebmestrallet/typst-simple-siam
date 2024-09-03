@@ -105,7 +105,7 @@
     block(breakable: false)[
       // No number in front of "References"
       // thanks @laurmaedje https://github.com/typst/typst/discussions/1055#discussioncomment-5770540
-      #if header.numbering != none { counter(heading).display() }
+      #if header.numbering != none [ #counter(heading).display() #h(0.7em) ]
       #header.body
       #v(0.5em)
     ]
@@ -116,7 +116,7 @@
     let number = context counter(heading).display()
     box[
       #number
-      #h(1em)
+      #h(0.7em)
       #header.body
     ] // a box and not a block, to be able to write text on the same line
   }
