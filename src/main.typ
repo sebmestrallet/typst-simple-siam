@@ -1,4 +1,4 @@
-#import "lib.typ": conf, theorem, definition, thmrules, proof
+#import "lib.typ": conf, theorem, definition, lemma, thmrules, proof
 #show: thmrules // I don't know why, but if this line is in lib.typ, the thmboxes are center-aligned
 
 #let ANONYMOUS = false
@@ -134,6 +134,38 @@ a particular spanning tree for the graph of the filled-in matrix.
 #definition[
   We describe the two methods in @sec:design. 
 In @sec:robustness we discuss some remaining details.
+]
+
+Our purpose here is to examine the nonnumerical complexity of the
+sparse elimination algorithm given in @bib:BANKSMITH.
+As was shown there, a general sparse elimination scheme based on the
+bordering algorithm requires less storage for pointers and
+row/column indices than more traditional implementations of general
+sparse elimination.  This is accomplished by exploiting the m-tree,
+a particular spanning tree for the graph of the filled-in matrix.
+Several good ordering algorithms (nested dissection and minimum degree)
+are available for computing $P$~@bib:GEORGELIU @bib:ROSE72.
+Since our interest here does not
+focus directly on the ordering, we assume for convenience that $P=I$,
+or that $A$ has been preordered to reflect an appropriate choice of $P$.
+
+Our purpose here is to examine the nonnumerical complexity of the
+sparse elimination algorithm given in~@bib:BANKSMITH.
+As was shown there, a general sparse elimination scheme based on the
+bordering algorithm requires less storage for pointers and
+row/column indices than more traditional implementations of general
+sparse elimination.
+
+#lemma[
+  We discuss first the choice for $I_(k-1)^k$
+  which is a generalization. We assume that $G^(k-1)$ is
+  obtained
+  from $G^k$
+  by standard coarsening; that is, if $G^k$ is a tensor product
+  grid $G_x^k times G_y^k times G_z^k$,
+  $G^(k-1)=G_x^(k-1) times G_y^(k-1) times G_z^(k-1)$,
+  where $G_x^(k-1)$ is obtained by deleting every other grid
+  point of $G_x^k$ and similarly for $G_y^k$ and $G_z^k$.
 ]
 
 == Robustness. <sec:robustness>

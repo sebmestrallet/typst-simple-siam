@@ -18,6 +18,15 @@
   bodyfmt: body => [#body],
 )
 
+#let lemma = thmbox(
+  "lemma",
+  "Lemma",
+  supplement: "Lem.",
+  inset: 0pt,
+  titlefmt: title => [#smallcaps(title)],
+  bodyfmt: body => [_ #body _],
+)
+
 #let proof(body) = block[
   _Proof._ #body #h(2em) #sym.rect.v
 ]
