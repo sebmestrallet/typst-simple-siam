@@ -1,4 +1,4 @@
-# The `tasteful-siam` Typst package
+# The `straightforward-siam` Typst package
 
 A Typst template for SIAM paper submissions
 
@@ -29,16 +29,16 @@ A Typst template for SIAM paper submissions
 These instructions will get you a copy of the project up and running on the typst web app. Perhaps a short code example on importing the package and a very simple teaser usage.
 
 ```bash
-typst init @preview/tasteful-siam
+typst init @preview/straightforward-siam
 ```
 
 ```typ
-#import "@preview/tasteful-siam:0.1.0": conf
+#import "@preview/straightforward-siam:0.1.0": conf
 
 #show: doc => conf(
   title: [A Typst template for SIAM paper submissions],
   authors: [Sébastien Mestrallet],
-  abstract: [See #link("https://github.com/sebmestrallet/typst-tasteful-siam")],
+  abstract: [See #link("https://github.com/sebmestrallet/typst-straightforward-siam")],
   doc,
 )
 
