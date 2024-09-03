@@ -9,6 +9,10 @@
   bodyfmt: body => [_ #body _],
 )
 
+#let proof(body) = block[
+  _Proof._ #body #h(2em) #sym.rect.v
+]
+
 #let conf(
   title: none,
   authors: none,

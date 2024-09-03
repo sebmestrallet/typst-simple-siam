@@ -1,4 +1,4 @@
-#import "lib.typ": conf, theorem, thmrules
+#import "lib.typ": conf, theorem, thmrules, proof
 #show: thmrules // I don't know why, but if this line is in lib.typ, the thmboxes are center-aligned
 
 #let ANONYMOUS = false
@@ -107,5 +107,26 @@ are available for computing $P$~@GEORGELIU @ROSE72.
 Since our interest here does not
 focus directly on the ordering, we assume for convenience that $P=I$,
 or that $A$ has been preordered to reflect an appropriate choice of $P$.
+
+#proof[
+  In this paper we consider two methods. The first method
+  is basically the method considered with two differences:
+  first, we perform plane relaxation by a two-dimensional
+  multigrid method, and second, we use a slightly different
+  choice of
+  interpolation operator, which improves performance
+  for nearly singular problems. In the second method coarsening
+  is done by successively coarsening in each of the three
+  independent variables and then ignoring the intermediate
+  grids; this artifice simplifies coding considerably.
+]
+
+Our purpose here is to examine the nonnumerical complexity of the
+sparse elimination algorithm given in~@BANKSMITH.
+As was shown there, a general sparse elimination scheme based on the
+bordering algorithm requires less storage for pointers and
+row/column indices than more traditional implementations of general
+sparse elimination.  This is accomplished by exploiting the m-tree,
+a particular spanning tree for the graph of the filled-in matrix.
 
 #bibliography("bib.yml", title: "References", style: "siam.csl")
