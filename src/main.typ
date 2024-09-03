@@ -1,4 +1,5 @@
-#import "lib.typ": conf
+#import "lib.typ": conf, theorem, thmrules
+#show: thmrules // I don't know why, but if this line is in lib.typ, the thmboxes are center-aligned
 
 #let ANONYMOUS = false
 
@@ -52,10 +53,10 @@ In this paper, we consider the solution of the $N times N$ linear system
 // numbered equation
 $
 A x = B
-$ <linear_system>
+$ <eq:axb>
 
 where $A$ is large, sparse, symmetric, and positive definite.
-We consider the direct solution of @linear_system by
+We consider the direct solution of @eq:axb by
 means of general sparse Gaussian elimination. In such
 a procedure, we find a permutation matrix $P$, and compute
 the decomposition
@@ -66,6 +67,8 @@ the decomposition
 ]
 
 where $L$ is unit lower triangular and $D$ is diagonal.
+
+= Design Considerations.
 
 Several good ordering algorithms (nested dissection and
 minimum degree)
@@ -82,5 +85,27 @@ bordering algorithm requires less storage for pointers and
 row/column indices than more traditional implementations of general
 sparse elimination.  This is accomplished by exploiting the m-tree,
 a particular spanning tree for the graph of the filled-in matrix.
+
+#theorem[
+  The method was extended to three dimensions.
+  For the standard multigrid coarsening (in
+  which, for a given grid, the next coarser grid has $1 slash 8$ as
+  many points), anisotropic problems require plane relaxation
+  to obtain a good smoothing factor.
+] <thm:extend3d>
+
+Our purpose here is to examine the nonnumerical complexity of the
+sparse elimination algorithm given in~@BANKSMITH.
+As was shown there, a general sparse elimination scheme based on the
+bordering algorithm requires less storage for pointers and
+row/column indices than more traditional implementations of general
+sparse elimination; see @thm:extend3d.
+This is accomplished by exploiting the m-tree,
+a particular spanning tree for the graph of the filled-in matrix.
+Several good ordering algorithms (nested dissection and minimum degree)
+are available for computing $P$~@GEORGELIU @ROSE72.
+Since our interest here does not
+focus directly on the ordering, we assume for convenience that $P=I$,
+or that $A$ has been preordered to reflect an appropriate choice of $P$.
 
 #bibliography("bib.yml", title: "References", style: "siam.csl")

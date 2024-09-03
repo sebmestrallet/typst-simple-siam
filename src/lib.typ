@@ -1,3 +1,14 @@
+#import "@preview/ctheorems:1.1.2": *
+
+#let theorem = thmbox(
+  "theorem",
+  "Theorem",
+  supplement: "Thm.",
+  inset: 0pt,
+  titlefmt: title => [#smallcaps(title)],
+  bodyfmt: body => [_ #body _],
+)
+
 #let conf(
   title: none,
   authors: none,
@@ -101,11 +112,14 @@
     numbering: n => locate(loc => {
       customEqNumbering(n, loc)
     }),
-    supplement: "Eq. ",
+    supplement: "Eq.",
     number-align: left
   )
 
-  columns(2)[
+  columns(
+    2,
+    gutter: 10pt
+  )[
     #block(breakable: false)[
       #text(weight: "bold")[Abstract]
     ]
