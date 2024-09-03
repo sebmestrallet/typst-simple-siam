@@ -13,7 +13,6 @@ categories = ["paper"]
 disciplines = ["computer-science", "engineering", "mathematics"] # https://www.siam.org/publications/siam-journals/
 exclude = [
 	".github",
-	"docs",
 	"scripts",
 	".typstignore",
 	"Justfile",
