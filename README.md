@@ -4,7 +4,7 @@ A Typst template for SIAM paper submissions
 
 ## Template adaptation checklist
 
-- [ ] Fill out `README.md`
+- [x] Fill out `README.md`
   - Change the `my-package` package name, including code snippets
   - Check section contents and/or delete sections that don't apply
 - [x] Check and/or replace `LICENSE` by something that suits your needs
@@ -26,12 +26,16 @@ A Typst template for SIAM paper submissions
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on the typst web app. Perhaps a short code example on importing the package and a very simple teaser usage.
+> [!IMPORTANT]
+> This template is not published yet, you cannot access it from `@preview/`, but you can download [`src/lib.typ`](src/lib.typ) and use it in your project.
 
+
+From the CLI:
 ```bash
 typst init @preview/straightforward-siam
 ```
 
+From the Typst web app:
 ```typ
 #import "@preview/straightforward-siam:0.1.0": conf
 
@@ -47,24 +51,41 @@ typst init @preview/straightforward-siam
 #lorem(50)
 ```
 
-### Installation
+## Theorems & algorithms
 
-A step by step guide that will tell you how to get the development environment up and running. This should example how to clone the repo and where to (maybe a link to the typst documentation on it), along with any pre-requisite software and installation steps.
-
-```
-$ First step
-$ Another step
-$ Final step
-```
-
-## Usage
-
-A more in-depth description of usage. Any template arguments? A complicated example that showcases most if not all of the functions the package provides? This is also an excellent place to signpost the manual.
+Based on third-party Typst packages, this template allows to insert formatted theorem/proof/definition/lemma environments, as well as algorithms:
 
 ```typ
-#import "@preview/my-package:0.1.0": *
+#import "lib.typ": conf, theorem, definition, lemma, thmrules, proof, pseudocode-list, algorithm
+#show: thmrules
 
-#let my-complicated-example = ...
+#show: doc => conf(
+  title: [A Typst template for SIAM paper submissions],
+  authors: [Sébastien Mestrallet],
+  abstract: [See #link("https://github.com/sebmestrallet/typst-straightforward-siam")],
+  doc,
+)
+
+= A theorem
+
+#theorem[
+  Here the theorem formulation
+]
+
+= An algorithm
+
+#algorithm(
+  pseudocode-list(
+    numbered-title: #smallcaps[(My Algorithm)],
+    stroke: none,
+    booktabs: false,
+    indentation: 2em
+  )[
+    - *Require:* Some input $a$
+    - *Require:* Some input $b$
+    + Here the algorithm definition
+  ]
+)
 ```
 
 ## Files
@@ -76,8 +97,8 @@ A more in-depth description of usage. Any template arguments? A complicated exam
 
 ## Dependencies
 
-- [`ctheorems`](https://typst.app/universe/package/ctheorems) ([sahasatvik/typst-theorems](https://github.com/sahasatvik/typst-theorems)) for numbered theorem environments, by [Satvik Saha](https://github.com/sahasatvik), [Rory Molinari](https://github.com/rmolinari), [Michael Hutchinson](https://github.com/MJHutchinson) and [DVDTSB](https://github.com/DVDTSB)
-- [`lovelace`](https://typst.app/universe/package/lovelace) ([andreasKroepelin/lovelace](https://github.com/andreasKroepelin/lovelace)) for pseudocode, by [Andreas Kröpelin](https://github.com/andreasKroepelin) and contributors
+- [`ctheorems`](https://typst.app/universe/package/ctheorems) ([sahasatvik/typst-theorems](https://github.com/sahasatvik/typst-theorems)) for numbered theorem environments, by [Satvik Saha](https://github.com/sahasatvik), [Rory Molinari](https://github.com/rmolinari), [Michael Hutchinson](https://github.com/MJHutchinson) and [DVDTSB](https://github.com/DVDTSB) [[MIT](https://github.com/sahasatvik/typst-theorems/blob/main/LICENSE)]
+- [`lovelace`](https://typst.app/universe/package/lovelace) ([andreasKroepelin/lovelace](https://github.com/andreasKroepelin/lovelace)) for pseudocode, by [Andreas Kröpelin](https://github.com/andreasKroepelin) and contributors [[MIT](https://github.com/andreasKroepelin/lovelace/blob/main/LICENSE)]
 
 They are imported with `#import "@preview/{name}:{version}` in [`src/lib.typ`](src/lib.typ).
 
@@ -93,3 +114,11 @@ How to create and publish a Typst template package:
 - The in-depth format requirements in the [typst/packages](https://github.com/typst/packages) README
 - Do as the [templates directly maintained by the Typst team](https://github.com/typst/templates)
 - Use the [typst-package-template](https://github.com/typst-community/typst-package-template) GitHub template from [@typst-community](https://github.com/typst-community)
+
+## Differences with the official TeX template
+
+See [open issues with the `compliance` label](https://github.com/sebmestrallet/typst-straightforward-siam/issues?q=sort%3Aupdated-desc+is%3Aopen+label%3Acompliance)
+
+## License
+
+[MIT-0](LICENSE)
