@@ -48,9 +48,12 @@
   text(weight: "thin")[#headingNumbering.#algorithmNumbering] // "thin" seems to cancel out a hard-coded bold formatting somewhere...
 }
 
+#let ALGO_SUPPLEMENT = smallcaps(text(weight: "thin")[Algorithm]) // "thin" seems to cancel out a hard-coded bold formatting somewhere...
+
+// outside conf() to be imported in main.typ
 #let algorithm(body) = figure(
   kind: "algorithm",
-  supplement: smallcaps[#text(weight: "thin")[Algorithm]], // "thin" seems to cancel out a hard-coded bold formatting somewhere...
+  supplement: ALGO_SUPPLEMENT, 
   numbering: n => locate(loc => {
     customAlgoNumbering(n, loc)
   }),
@@ -58,8 +61,6 @@
     #body
   ]
 )
-
-#show figure.where(kind: "algorithm") : it => [Algo : #it.counter.display(it.numbering)#it.separator#it.body]
 
 #let conf(
   title: none,
@@ -167,6 +168,36 @@
     supplement: "Eq.",
     number-align: left
   )
+
+  show: thmrules
+
+  show ref: it => {
+    let el = it.element
+    if el != none and el.func() == math.equation {
+      // Override equation references.
+      let loc = el.location()
+      let n = counter(math.equation).at(loc).first()
+      customEqNumbering(n, loc)
+    }
+    else if el != none and el.func() == figure {
+      let fig = el.func()
+      // strangely, fig.kind is auto, not "figure" or "algorithm"
+      if el.supplement == ALGO_SUPPLEMENT {
+        // Override algorithm references.
+        let loc = el.location()
+        let n = counter(figure.where(kind: algorithm)).at(loc).first()+1
+        "Algorithm " + customAlgoNumbering(n, loc)
+      }
+      else {
+        // Reference of other kinds of figures as usual.
+        it
+      }
+    }
+    else {
+      // Other references as usual.
+      it
+    }
+  }
 
   columns(
     2,

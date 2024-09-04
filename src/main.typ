@@ -1,5 +1,4 @@
 #import "lib.typ": conf, theorem, definition, lemma, thmrules, proof, pseudocode-list, algorithm
-#show: thmrules // I don't know why, but if this line is in lib.typ, the thmboxes are center-aligned
 
 #let ANONYMOUS = false
 
