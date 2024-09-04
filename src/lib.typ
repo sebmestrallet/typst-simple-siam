@@ -31,6 +31,36 @@
   _Proof._ #body #h(2em) #sym.rect.v
 ]
 
+// Reference figures with just "Fig."...
+#set figure(numbering: "1", supplement: "Fig.")
+// ...but display the full word "Figure" in the figure caption
+//    (`Figure` instead of `#it.supplement` below)
+#show figure.caption : it => [Figure #it.counter.display(it.numbering)#it.separator#it.body]
+
+#import "@preview/lovelace:0.3.0": *
+
+// Thanks @Julian-Wassmann https://github.com/typst/typst/discussions/2280#discussioncomment-7612699
+// Use (2.3) for the global 3rd algorithm, in the 2nd section
+#let customAlgoNumbering(n, loc) = {
+  let level1HeadingNumber = counter(heading).at(loc).at(0)
+  let headingNumbering = numbering("1", level1HeadingNumber)
+  let algorithmNumbering = numbering("1", n)
+  text(weight: "thin")[#headingNumbering.#algorithmNumbering] // "thin" seems to cancel out a hard-coded bold formatting somewhere...
+}
+
+#let algorithm(body) = figure(
+  kind: "algorithm",
+  supplement: smallcaps[#text(weight: "thin")[Algorithm]], // "thin" seems to cancel out a hard-coded bold formatting somewhere...
+  numbering: n => locate(loc => {
+    customAlgoNumbering(n, loc)
+  }),
+  box[
+    #body
+  ]
+)
+
+#show figure.where(kind: "algorithm") : it => [Algo : #it.counter.display(it.numbering)#it.separator#it.body]
+
 #let conf(
   title: none,
   authors: none,
@@ -122,7 +152,7 @@
   }
 
   // Thanks @Julian-Wassmann https://github.com/typst/typst/discussions/2280#discussioncomment-7612699
-  // Use (2.3) for the 3rd equation of the 2nd section
+  // Use (2.3) for the global 3rd equation, in the 2nd section
   let customEqNumbering(n, loc) = {
     let level1HeadingNumber = counter(heading).at(loc).at(0)
     let headingNumbering = numbering("1", level1HeadingNumber)
@@ -137,12 +167,6 @@
     supplement: "Eq.",
     number-align: left
   )
-
-  // Reference figures with just "Fig."...
-  set figure(numbering: "1", supplement: "Fig.")
-  // ...but display the full word "Figure" in the figure caption
-  //    (`Figure` instead of `#it.supplement` below)
-  show figure.caption : it => [Figure #it.counter.display(it.numbering)#it.separator#it.body]
 
   columns(
     2,

@@ -1,4 +1,4 @@
-#import "lib.typ": conf, theorem, definition, lemma, thmrules, proof
+#import "lib.typ": conf, theorem, definition, lemma, thmrules, proof, pseudocode-list, algorithm
 #show: thmrules // I don't know why, but if this line is in lib.typ, the thmboxes are center-aligned
 
 #let ANONYMOUS = false
@@ -242,7 +242,6 @@ computing the fill-in during the symbolic factorization phase~@bib:EISENSTAT @bi
 We show a blank figure in @fig:blank.
 
 == Robustness. <sec:robustness>
-
 We do not
 attempt to present an overview
 here, but rather attempt to focus on those results that
@@ -272,8 +271,140 @@ $
 
 = Algorithm <sec:algorithm>
 
+We provide some pseudocode in @alg:deterministicmps.
+
+#algorithm(
+  pseudocode-list(
+    numbered-title: [#smallcaps[(Deterministic-MPS)] maximal
+Poisson-disk sampling],
+    stroke: none,
+    booktabs: false,
+    indentation: 2em
+  )[
+    - *Require:* Rectangular grid $cal(G)$ of whole grid squares
+    - *Require:* Flag if domain is pediodic: `True` or `False`
+    - *Ensure:* Maximal Poisson-disk sampling og rectangle
+      + *function* #smallcaps[Deterministic-MPS($cal(G)$)]
+        + \/\/ Initialize Grid $cal(G)$
+        + *for* $g in cal(G)$ *do*
+          + $g$.point = $(u,v)$ uniform random in square
+          + $g$.time = $A e^(-A w)$, rand $w$, expovariate in area
+          + $g$.scooped-square = square polygon $g$
+        + *end for*
+        + Global pre-pass heuristic
+        + \/\/ Find locally-early squares
+        + *for* $g in cal(G)$ and $h in "neighbors"(g)$ *do*
+          + increment \#antecedents of $g$ or $h$ (later)
+        + *end for*
+        + *for* $g in cal(G)$ *do*
+          + EarlySquares.add($g$ if no antecedents)
+        + *end for*
+        + \/\/ Accept samples and update
+        + *reapeat*
+          + $g$ = EarlySquares.pop() #h(1fr) #sym.triangle any order
+          + accept $g$.point as Poisson-disk sample
+          + *for* $h in "neighbors"(g)$ *do*
+            + decrement $h$.antecedents
+            + #h(1fr) #sym.triangle since $g$ no longer blocks $h$
+            + \/\/ resample candidates in disk($g$.point)
+            + *if* $h$.point #sym.in disk($g$.point) *then*
+              + $h$.scooped-square #sym.minus= disk($g$.point)
+              + *if* $h$.scooped-square is empty *then*
+                + $h$.time = #sym.infinity
+              + *else*
+                + trim chocks of $h$.scooped-square
+                + triangulate remaining polygon
+                + $U in {"chocks","triangles"}$ by area
+                + $h$.point $in U$ uniform by area
+                + $h$.time += expovar(A($h$.scooped-square))
+              + *end if*
+              + *for* $s in "neighbors"(h)$ *do*
+                + *if* $h$ is later than $s$, but was earlier *then*
+                  + increment $h$.antecedents
+  ]
+) <alg:deterministicmps>
+
+// manual break
+
+#pseudocode-list(
+  stroke: none,
+  booktabs: false,
+  indentation: 2em,
+  line-numbering: x => x+37 // manual line number offset
+)[ // manual indentation because we do not start at level 0
+  + #h(2em*7)decrement $s$.antecedents
+  + #h(2em*6)*if* $s$ has no antecedents *then*
+  + #h(2em*7)EarlySquares.add($s$)
+  + #h(2em*6)*end if* //6
+  + #h(2em*5)*end if* // 5
+  + #h(2em*4)*end for* // 4
+  + #h(2em*3)*end if* // 3
+  + #h(2em*3)*if* $h$ has no antecedents *then* // 3
+  + #h(2em*4)EarlySquares.add($h$) // 4
+  + #h(2em*3)*end if* // 3
+  + #h(2em*2)*end for* //2
+  + #h(2em*1)*until* EarlySquares == empty //1
+  + *end function*
+]
+
 = Results <sec:results>
 
-== Versatility. <sec:versatility>
+We do not
+attempt to present an overview
+here, but rather attempt to focus on those results that
+are relevant to our particular algorithm, @alg:deterministicmps.
+
+== Versatility. <sec:versatility> The special
+structure of this problem allows us to make exact estimates of
+the complexity.  For the old approach, we show that the
+complexity of the intersection problem is $O(n^3)$, the same
+as the complexity of the numerical computations~@bib:GEORGELIU @bib:ROSEWHITTEN. For the
+new approach, the complexity of the second part is reduced to
+$O(n^2 (log n)^2)$.
+
+#h(1.5em)
+To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase~@bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE72 @bib:ROSE76 @bib:ROSEWHITTEN @bib:SCHREIBER}.
+In @sec:robustness, we analyze the complexity of the old and new
+approaches to the intersection problem for the special case of
+an $n times n$ grid ordered by nested dissection. The special
+structure of this problem allows us to make exact estimates of
+the complexity. To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase @bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE72 @bib:ROSE76 @bib:ROSEWHITTEN @bib:SCHREIBER.
+
+#h(1.5em)
+In @sec:design, we review the bordering algorithm, and introduce
+the sorting and intersection problems that arise in the
+sparse formulation of the algorithm.
+In @sec:robustness, we analyze the complexity of the old and new
+approaches to the intersection problem for the special case of
+an $n times n$ grid ordered by nested dissection. The special
+structure of this problem allows us to make exact estimates of
+the complexity. To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase~@bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE72 @bib:ROSE76 @bib:ROSEWHITTEN @bib:SCHREIBER.
+
+#h(1.5em)
+For the old approach, we show that the
+complexity of the intersection problem is $O(n^3)$, the same
+as the complexity of the numerical computations.  For the
+new approach, the complexity of the second part is reduced to
+$O(n^2 (log n)^2)$.
+
+#h(1.5em)
+To our knowledge, the m-tree previously has not been applied in this
+fashion to the numerical factorization, but it has been used,
+directly or indirectly, in several optimal order algorithms for
+computing the fill-in during the symbolic factorization phase~@bib:LAW @bib:LIU @bib:LIU2 @bib:ROSE72 @bib:ROSE76 @bib:ROSEWHITTEN @bib:SCHREIBER.
+In @sec:robustness, we analyze the complexity of the old and new
+approaches to the intersection problem for the special case of
+an $n times n$ grid ordered by nested dissection. The special
+structure of this problem allows us to make exact estimates of
+the complexity. 
 
 #bibliography("bib.yml", title: "References", style: "siam.csl")

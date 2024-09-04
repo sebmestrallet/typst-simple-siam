@@ -74,6 +74,13 @@ A more in-depth description of usage. Any template arguments? A complicated exam
 - [`src/bib.yml`](src/bib.yml): 	transcoding of `ltexpprt_references.bib` from the official template to the [Hayagriva](https://github.com/typst/hayagriva/blob/main/docs/file-format.md) format
 - [`src/siam.csl`](src/siam.csl): [Citation Style Language](https://citationstyles.org/) for the bibliography, based on the [IEEE](https://github.com/citation-style-language/styles/blob/master/ieee.csl) one (modified `<macro name="author">` to have small caps)
 
+## Dependencies
+
+- [`ctheorems`](https://typst.app/universe/package/ctheorems) ([sahasatvik/typst-theorems](https://github.com/sahasatvik/typst-theorems)) for numbered theorem environments, by [Satvik Saha](https://github.com/sahasatvik), [Rory Molinari](https://github.com/rmolinari), [Michael Hutchinson](https://github.com/MJHutchinson) and [DVDTSB](https://github.com/DVDTSB)
+- [`lovelace`](https://typst.app/universe/package/lovelace) ([andreasKroepelin/lovelace](https://github.com/andreasKroepelin/lovelace)) for pseudocode, by [Andreas Kröpelin](https://github.com/andreasKroepelin) and contributors
+
+They are imported with `#import "@preview/{name}:{version}` in [`src/lib.typ`](src/lib.typ).
+
 ## Ressources
 
 TeX sources of the official template:
