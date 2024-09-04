@@ -73,7 +73,7 @@
     paper: "us-letter",
     margin: 0.85in,
     footer: align(
-      right + horizon,
+      right + top,
       text(size: 7pt)[ // https://www.sascha-frank.com/latex-font-size.html for `\scriptsize` & the `article` documentclass
         Copyright © 2025 by SIAM\
         Unauthorized reproduction of this article is prohibited
