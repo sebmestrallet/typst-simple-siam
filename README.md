@@ -2,6 +2,13 @@
 
 A Typst template for SIAM paper submissions
 
+<p align="center">
+<img src="thumbnails/p1.png" alt="page 1 of an example paper based on this template" width="49%">
+<img src="thumbnails/p2.png" alt="page 2 of an example paper based on this template" width="49%">
+<img src="thumbnails/p3.png" alt="page 3 of an example paper based on this template" width="49%">
+<img src="thumbnails/p4.png" alt="page 4 of an example paper based on this template" width="49%">
+</p>
+
 ## Template adaptation checklist
 
 - [x] Fill out `README.md`
@@ -21,7 +28,7 @@ A Typst template for SIAM paper submissions
 
     if configured correctly, whenever you create a tag `v...`, your package will be pushed onto a branch on the `REGISTRY_REPO`, from which you can then create a pull request against [typst/packages](https://github.com/typst/packages/)
 - [x] remove/replace the example test case
-- [ ] (add your actual code, docs and tests)
+- [x] (add your actual code, docs and tests)
 - [ ] remove this section from the README
 
 ## Getting Started
