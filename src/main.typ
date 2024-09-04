@@ -404,6 +404,18 @@ In @sec:robustness, we analyze the complexity of the old and new
 approaches to the intersection problem for the special case of
 an $n times n$ grid ordered by nested dissection. The special
 structure of this problem allows us to make exact estimates of
-the complexity. 
+the complexity.
+
+*Acknowledgements*
+
+#anon(
+  [Redacted for anonymity.], // Leave as-is
+  [ //Actual acknowledgement goes here.
+  I thank Thouis Ray Jones for suggesting this problem to me in 2012, and my institution for funding me.\
+  #text(size: 6pt)[
+    #h(1.5em)
+    My institution requires this disclaimer on all my publications, even though it handicaps its employees by preventing the author from making full use of the proceedings page limit. This technical article contains objective information and does not necessarily represent the subjective opinions of my institution. The authors are not authorized to communicate the policy of the institution. That said, my institution does not necessarily represent my views nor speak for me.
+  ]
+])
 
 #bibliography("bib.yml", title: "References", style: "siam.csl")
