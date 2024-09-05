@@ -131,12 +131,14 @@
 
   set heading(numbering: "1.1")
 
+  let SPACE_BETWEEN_HEADING_AND_ITS_NUMBER = 0.7em
+
   show heading.where(level: 1): header => {
     set text(size: 9pt, weight: "bold")
     block(breakable: false)[
       // No number in front of "References"
       // thanks @laurmaedje https://github.com/typst/typst/discussions/1055#discussioncomment-5770540
-      #if header.numbering != none [ #counter(heading).display() #h(0.7em) ]
+      #if header.numbering != none [ #counter(heading).display() #h(SPACE_BETWEEN_HEADING_AND_ITS_NUMBER) ]
       #header.body
       #v(0.5em)
     ]
@@ -147,7 +149,17 @@
     let number = context counter(heading).display()
     box[
       #number
-      #h(0.7em)
+      #h(SPACE_BETWEEN_HEADING_AND_ITS_NUMBER)
+      #header.body
+    ] // a box and not a block, to be able to write text on the same line
+  }
+
+  show heading.where(level: 3): header => {
+    set text(size: 9pt, weight: "bold")
+    let number = context counter(heading).display()
+    box[
+      #number
+      #h(SPACE_BETWEEN_HEADING_AND_ITS_NUMBER)
       #header.body
     ] // a box and not a block, to be able to write text on the same line
   }
