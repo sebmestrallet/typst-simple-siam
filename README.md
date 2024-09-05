@@ -1,4 +1,4 @@
-# The `straightforward-siam` Typst package
+# The `simple-siam` Typst package
 
 A Typst template for SIAM paper submissions
 
@@ -39,17 +39,17 @@ A Typst template for SIAM paper submissions
 
 From the CLI:
 ```bash
-typst init @preview/straightforward-siam
+typst init @preview/simple-siam
 ```
 
 From the Typst web app:
 ```typ
-#import "@preview/straightforward-siam:0.1.0": conf
+#import "@preview/simple-siam:0.1.0": conf
 
 #show: doc => conf(
   title: [A Typst template for SIAM paper submissions],
   authors: [Sébastien Mestrallet],
-  abstract: [See #link("https://github.com/sebmestrallet/typst-straightforward-siam")],
+  abstract: [See #link("https://github.com/sebmestrallet/typst-simple-siam")],
   doc,
 )
 
@@ -69,7 +69,7 @@ Based on third-party Typst packages, this template allows to insert formatted th
 #show: doc => conf(
   title: [A Typst template for SIAM paper submissions],
   authors: [Sébastien Mestrallet],
-  abstract: [See #link("https://github.com/sebmestrallet/typst-straightforward-siam")],
+  abstract: [See #link("https://github.com/sebmestrallet/typst-simple-siam")],
   doc,
 )
 
@@ -124,7 +124,7 @@ How to create and publish a Typst template package:
 
 ## Differences with the official TeX template
 
-See [open issues with the `compliance` label](https://github.com/sebmestrallet/typst-straightforward-siam/issues?q=sort%3Aupdated-desc+is%3Aopen+label%3Acompliance)
+See [open issues with the `compliance` label](https://github.com/sebmestrallet/typst-simple-siam/issues?q=sort%3Aupdated-desc+is%3Aopen+label%3Acompliance)
 
 ## License
 

@@ -1,13 +1,13 @@
 # for a description of available keys, see https://github.com/typst/packages/?tab=readme-ov-file#package-format
 
 [package]
-name = "straightforward-siam"
+name = "simple-siam"
 version = "0.1.0"
 entrypoint = "src/lib.typ"
 authors = ["Sébastien Mestrallet <@sebmestrallet>"]
 license = "MIT-0"
 description = "A Typst template for SIAM paper submissions"
-repository = "https://github.com/sebmestrallet/typst-straightforward-siam"
+repository = "https://github.com/sebmestrallet/typst-simple-siam"
 keywords = ["SIAM", "Society for Industrial and Applied Mathematics", "Computer Science", "Engineering", "Mathematics"]
 categories = ["paper"]
 disciplines = ["computer-science", "engineering", "mathematics"] # https://www.siam.org/publications/siam-journals/
