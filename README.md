@@ -9,6 +9,17 @@ A Typst template for SIAM paper submissions
 <img src="thumbnails/p4.png" alt="page 4 of an example paper based on this template" width="49%">
 </p>
 
+<details>
+<summary>About the name</summary>
+
+- `typst-simple-siam` is the name of the GitHub repo, `simple-siam` is the name of the Typst template
+- The Typst template name does not contain `typst`, because it is redundant[^typst_template_naming]
+- The Typst template name is not just `siam`, because it is not an official template, thus the name must start with a non-descriptive part[^typst_template_naming]
+
+[^typst_template_naming]: https://github.com/typst/packages?tab=readme-ov-file#submission-guidelines
+
+</details>
+
 ## Template adaptation checklist
 
 - [x] Fill out `README.md`
