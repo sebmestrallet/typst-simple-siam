@@ -1,4 +1,9 @@
-# The `simple-siam` Typst package
+# `simple-siam` Typst template
+
+[![Maintenance Level: Abandoned](https://badgen.net/badge/Maintenance%20Level/Abandoned?color=fe7d37)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
+
+> [!IMPORTANT]
+> Differences with the official TeX template were to be inventoried with [the `compliance` label in issues](https://github.com/sebmestrallet/typst-simple-siam/issues?q=sort%3Aupdated-desc+is%3Aopen+label%3Acompliance). They are many that are not listed.
 
 A Typst template for SIAM paper submissions
 
@@ -8,17 +13,6 @@ A Typst template for SIAM paper submissions
 <img src="thumbnails/p3.png" alt="page 3 of an example paper based on this template" width="49%">
 <img src="thumbnails/p4.png" alt="page 4 of an example paper based on this template" width="49%">
 </p>
-
-<details>
-<summary>About the name</summary>
-
-- `typst-simple-siam` is the name of the GitHub repo, `simple-siam` is the name of the Typst template
-- The Typst template name does not contain `typst`, because it is redundant[^typst_template_naming]
-- The Typst template name is not just `siam`, because it is not an official template, thus the name must start with a non-descriptive part[^typst_template_naming]
-
-[^typst_template_naming]: https://github.com/typst/packages?tab=readme-ov-file#submission-guidelines
-
-</details>
 
 ## Template adaptation checklist
 
@@ -44,30 +38,7 @@ A Typst template for SIAM paper submissions
 
 ## Getting Started
 
-> [!IMPORTANT]
-> This template is not published yet, you cannot access it from `@preview/`, but you can download [`src/lib.typ`](src/lib.typ) and use it in your project.
-
-
-From the CLI:
-```bash
-typst init @preview/simple-siam
-```
-
-From the Typst web app:
-```typ
-#import "@preview/simple-siam:0.1.0": conf
-
-#show: doc => conf(
-  title: [A Typst template for SIAM paper submissions],
-  authors: [Sébastien Mestrallet],
-  abstract: [See #link("https://github.com/sebmestrallet/typst-simple-siam")],
-  doc,
-)
-
-= First section
-
-#lorem(50)
-```
+This template is incomplete and not published, you cannot access it from `@preview/`, but you can download [`src/lib.typ`](src/lib.typ) and use it in your project.
 
 ## Theorems & algorithms
 
@@ -132,10 +103,6 @@ How to create and publish a Typst template package:
 - The in-depth format requirements in the [typst/packages](https://github.com/typst/packages) README
 - Do as the [templates directly maintained by the Typst team](https://github.com/typst/templates)
 - Use the [typst-package-template](https://github.com/typst-community/typst-package-template) GitHub template from [@typst-community](https://github.com/typst-community)
-
-## Differences with the official TeX template
-
-See [open issues with the `compliance` label](https://github.com/sebmestrallet/typst-simple-siam/issues?q=sort%3Aupdated-desc+is%3Aopen+label%3Acompliance)
 
 ## License
 
